@@ -11,6 +11,7 @@ model = model_from_json(loaded_model_json)
 model.load_weights("model.h5")
 print("Loaded model from disk")
 
-predictions = model.predict_classes(X)
+#predictions = model.predict_classes(X)
+predictions = model.predict(X)
 for i in range(5,10):
 	print('%s => %d (expected %d)' % (X[i].tolist(), predictions[i], y[i]))
